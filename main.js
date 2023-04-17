@@ -5,6 +5,7 @@ const bodyParser = require('body-parser' )
 const express = require('express')
 const cors = require('cors')
 const Web3 = require('web3')
+require('dotenv').config()
 const web3 = new Web3()
 const app = express()
 app.use(cors())
@@ -87,6 +88,6 @@ app.post('/mint-nft', (req, res) => {
 })
 
 // Start the server
-app.listen(process.env.port || port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Server listening at http://localhost:${port}`)
 })
