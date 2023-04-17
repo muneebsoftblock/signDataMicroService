@@ -23,7 +23,6 @@ const privateKey =
 const whitelist = [
     '0x8a46c73584e4569b25da0fd674f9df1fac99d700',
     '0x7242Ca848aB6e8a52942E189b0Afd5B7410Ef5f9',
-    '0x...',
 ].map((a) => a.toLowerCase()) // replace with actual whitelist
 
 app.get('/', (req, res) => {
