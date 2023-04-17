@@ -1,7 +1,7 @@
 // why are you writing code here? explain from step 1 to end.
 // node js server to create signature data from private key as a ticket for nft minting from joining total supply and user address. code in web3.js
 
-const bodyParser = require('body-parser' )
+const bodyParser = require('body-parser')
 const express = require('express')
 const cors = require('cors')
 const Web3 = require('web3')
