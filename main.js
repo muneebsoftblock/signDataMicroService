@@ -9,7 +9,7 @@ require('dotenv').config()
 const web3 = new Web3()
 const app = express()
 app.use(cors())
-const port = 4000
+const port = process.env.PORT || 4000
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(express.json({ limit: '2mb' }))
@@ -57,7 +57,9 @@ app.post('/mint-nft', (req, res) => {
 
             // Proceed with NFT minting
             // Sign the message with the user's private key
-            const message = web3.utils.soliditySha3(userAddress + Math.floor(Date.now() / 1000));
+            const message = web3.utils.soliditySha3(
+                userAddress + Math.floor(Date.now() / 1000)
+            )
             const signature = web3.eth.accounts.sign(message, privateKey)
 
             // Return the signature data as a JSON response
@@ -88,6 +90,6 @@ app.post('/mint-nft', (req, res) => {
 })
 
 // Start the server
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`)
 })
