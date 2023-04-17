@@ -1,0 +1,10 @@
+/node_modules
+.env
+.DS_Store
+secret.js
+secret.txt
+output
+images
+backup
+yarn.lock
+package-lock.json
