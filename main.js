@@ -87,6 +87,6 @@ app.post('/mint-nft', (req, res) => {
 })
 
 // Start the server
-app.listen(port, () => {
+app.listen(process.env.port || port, () => {
     console.log(`Server listening at http://localhost:${port}`)
 })
